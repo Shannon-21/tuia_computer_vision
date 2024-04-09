@@ -1,6 +1,16 @@
 import cv2
 import matplotlib.pyplot as plt
 
+
+''' Consigna
+
+Elija una de las imágenes color que tomó para la clase y aplique separación de canales
+y elija un método para transformarla en escala de grises.
+Muestre por pantalla los resultados obtenidos. 
+
+'''
+
+
 # Load the image
 imagen = cv2.imread('Unidad1\imagenes\cv2_2024_04_09.jpg')
 
