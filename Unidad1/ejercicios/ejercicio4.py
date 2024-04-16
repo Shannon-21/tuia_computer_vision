@@ -1,3 +1,4 @@
+
 import pandas as pd
 import cv2
 from datetime import datetime
@@ -6,17 +7,16 @@ import time
 initialState = None
 motionTrackList = [None, None]
 motionTime = []
-dataFrame = pd.DataFrame(columns=["Initial", "Final"])
 
 # Open the video file
-video = cv2.VideoCapture('Unidad1\Videos\holandesa_ajedrez ‐ Hecho con Clipchamp.mp4')
+video = cv2.VideoCapture('Unidad1\Videos\holandesa_ajedrez.mp4')  # Replace 'path_to_video_file.mp4' with the path to your video file
 
 while True:
     check, cur_frame = video.read()
     var_motion = 0
 
     if not check:
-        break
+        break  # If there are no more frames to read, break the loop
 
     gray_image = cv2.cvtColor(cur_frame, cv2.COLOR_BGR2GRAY)
     gray_frame = cv2.GaussianBlur(gray_image, (21, 21), 0)
@@ -51,7 +51,7 @@ while True:
         motionTime.append(datetime.now())
 
     cv2.imshow("Video", cur_frame)
-    time.sleep(0.01)
+    time.sleep(0.01)  # Add a delay of 0.1 seconds (adjust as needed)
 
     wait_key = cv2.waitKey(1)
     if wait_key == ord('m'):
